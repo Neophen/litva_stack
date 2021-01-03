@@ -1,5 +1,5 @@
 <template>
-  <PageLayout>
+  <PageLayout v-bind="page">
     <h1>Ok is this working now</h1>
     <div>
       {{ testProp }}
@@ -23,7 +23,11 @@ export default {
     },
   },
   setup() {
-    return {};
+    return {
+        page: {
+            title: 'Dashboard'
+        }
+    };
   },
 };
 </script>
