@@ -11,10 +11,9 @@ export default {
       cors: true,
   },
   build: {
-    base: 'public/dist',
+    base: '../public',
     target: 'es2019',
-      outDir: 'public/dist',
-      assetsDir: 'public/dist',
+    outDir: '../public/dist',
     manifest: true,
     minify: 'esbuild',
   },

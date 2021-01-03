@@ -35,14 +35,14 @@ function viteCss(string $name): string
     }
 
     $jsAsset = viteAsset($name . '.css');
-    return "<link rel=\"stylesheet\" href=\"{$jsAsset}\">";
+    return "<link rel='stylesheet' href='{$jsAsset}'>";
 }
 
 // Helper to output the script tag
 function viteJs(string $name): string
 {
     $jsAsset = viteAsset($name . '.js');
-    return "<script type=\"module\" src=\"{$jsAsset}\"></script>";
+    return "<script type='module' src='{$jsAsset}'></script>";
 }
 
 // Helper to locate files
@@ -54,10 +54,9 @@ function viteAsset(string $filename): string
     }
 
     // Locate hashed files in production
-    $manifest = json_decode(file_get_contents(
-        public_path() . '/dist/_assets/manifest.json'
-    ), true);
+    $manifest = json_decode(file_get_contents(public_path() . '/dist/manifest.json'), true);
 
-    return '/dist/_assets/'
-        . ($manifest[$filename] ?? $filename);
+    $cachedPath = $manifest[$filename] ?? $filename;
+
+    return "/dist/${$cachedPath}";
 }
