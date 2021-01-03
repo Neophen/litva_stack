@@ -1,9 +1,10 @@
 <template>
   <PageLayout>
-    <h1>This is a basic page layout</h1>
+    <h1>Ok is this working now</h1>
     <div>
       {{ testProp }}
     </div>
+    <InertiaLink href="/test-error" >Test error</InertiaLink>
   </PageLayout>
 </template>
 

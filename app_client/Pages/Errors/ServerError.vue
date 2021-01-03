@@ -8,7 +8,7 @@
 <script>
 import { computed } from "vue";
 
-import PageLayout from "../../Layouts/PageLayout";
+import PageLayout from "../../Layouts/PageLayout.vue";
 
 export default {
   name: "ServerError",
@@ -18,7 +18,7 @@ export default {
   props: {
     status: Number,
   },
-  setup() {
+  setup(props) {
     const TITLES = {
       503: "503: Service Unavailable",
       500: "500: Server Error",

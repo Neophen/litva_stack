@@ -8,8 +8,8 @@
     <title>{{ config('app.name') }}</title>
 
     {!! viteClient() !!}
-    {!! viteCss('style') !!}
-    {!! viteJs('main') !!}
+    {!! viteCss('index') !!}
+    {!! viteJs('index') !!}
 
 </head>
 

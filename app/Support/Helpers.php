@@ -12,7 +12,7 @@ function logAnything($message): void
 
 function getIsInDevelopment()
 {
-    return config('app.env') == 'local';
+    return app()->environment('local');
 }
 
 // Vite Client that must be loaded during development
@@ -55,8 +55,7 @@ function viteAsset(string $filename): string
 
     // Locate hashed files in production
     $manifest = json_decode(file_get_contents(public_path() . '/dist/manifest.json'), true);
+    $cachedPath = array_key_exists($filename, $manifest) ? $manifest[$filename]['file'] : $filename;
 
-    $cachedPath = $manifest[$filename] ?? $filename;
-
-    return "/dist/${$cachedPath}";
+    return "/dist/{$cachedPath}";
 }
