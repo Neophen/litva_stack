@@ -11,7 +11,7 @@ const setDefaultLayout = ({ default: page }) => {
   return page;
 };
 
-createApp({
+const app = createApp({
   render: () =>
     h(App, {
       initialPage: JSON.parse(el.dataset.page),
@@ -21,6 +21,23 @@ createApp({
         return import(`./Pages/${folder}/${name}.vue`).then(setDefaultLayout);
       },
     }),
-})
-  .use(plugin)
-  .mount(el);
+});
+
+app.config.globalProperties.__ = (key) => key;
+
+app.directive("click-outside", {
+  beforeMount(el, binding) {
+    el.clickOutsideEvent = function (event) {
+      if (!(el === event.target || el.contains(event.target))) {
+        binding.value(event, el);
+      }
+    };
+    document.body.addEventListener("click", el.clickOutsideEvent);
+  },
+  unmounted(el) {
+    document.body.removeEventListener("click", el.clickOutsideEvent);
+  },
+});
+
+app.use(plugin);
+app.mount(el);
