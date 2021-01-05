@@ -6,7 +6,21 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Oxygen-Sans",
+          "Ubuntu",
+          "Cantarell",
+          "Helvetica Neue",
+          "sans-serif",
+        ],
+      },
+    },
   },
   variants: {
     extend: {
