@@ -8,7 +8,7 @@ class DashboardIndexController extends Controller
 {
     public function __invoke()
     {
-        return Inertia::render('Dashboard/Index', [
+        return Inertia::render('DashboardIndex', [
             'testProp' => 'this is received from the server',
         ]);
     }

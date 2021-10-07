@@ -2,22 +2,20 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "NODE_ENV=production vite build"
     },
     "dependencies": {
-        "@inertiajs/inertia": "^0.8.2",
-        "@inertiajs/inertia-vue3": "^0.3.4",
-        "axios": "^0.21.1",
-        "vue": "^3.0.5"
+        "@inertiajs/inertia": "^0.10.1",
+        "@inertiajs/inertia-vue3": "^0.5.2",
+        "axios": "^0.21.4",
+        "vue": "^3.2.19"
     },
     "devDependencies": {
-        "@tailwindcss/forms": "^0.2.1",
-        "@tailwindcss/postcss7-compat": "^2.0.2",
-        "@vitejs/plugin-vue": "^1.0.3",
-        "@vue/compiler-sfc": "^3.0.5",
-        "autoprefixer": "^9.8.6",
-        "postcss": "^7.0.35",
-        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
-        "vite": "^2.0.0-beta.2"
+        "@vitejs/plugin-vue": "^1.9.3",
+        "@vue/compiler-sfc": "^3.2.19",
+        "autoprefixer": "^10.3.7",
+        "postcss": "^8.3.9",
+        "tailwindcss": "^2.2.16",
+        "vite": "^2.6.4"
     }
 }

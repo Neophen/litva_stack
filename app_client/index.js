@@ -2,6 +2,18 @@ import { createApp, h } from "vue";
 import { App, plugin } from "@inertiajs/inertia-vue3";
 import "./index.css";
 
+import { createApp, h } from "vue";
+import { createInertiaApp } from "@inertiajs/inertia-vue3";
+
+createInertiaApp({
+  resolve: (name) => require(`./Pages/${name}`),
+  setup({ el, App, props, plugin }) {
+    createApp({ render: () => h(App, props) })
+      .use(plugin)
+      .mount(el);
+  },
+});
+
 import StaticLayout from "./Layouts/StaticLayout.vue";
 
 const el = document.getElementById("app");

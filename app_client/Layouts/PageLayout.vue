@@ -1,13 +1,4 @@
-<template>
-  <div class="bg-gray-100 min-h-screen">
-    <div class="bg-white px-4 py-2">
-      <h1 class="text-4xl font-bold">{{ title }}</h1>
-    </div>
-    <slot />
-  </div>
-</template>
-
-<script>
+<script setup name="PageLayout">
 export default {
   name: "PageLayout",
   props: {
@@ -18,3 +9,12 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div class="min-h-screen bg-gray-100">
+    <div class="px-4 py-2 bg-white">
+      <h1 class="text-4xl font-bold">{{ title }}</h1>
+    </div>
+    <slot />
+  </div>
+</template>

@@ -15,6 +15,4 @@ use App\Http\Controllers\DashboardIndexController;
 |
 */
 
-Route::get('/', DashboardIndexController::class)->middleware(['auth'])->name('dashboard');
-
-require __DIR__ . '/auth.php';
+Route::get('/', DashboardIndexController::class)->name('dashboard');
